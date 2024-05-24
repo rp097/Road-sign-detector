@@ -34,15 +34,7 @@ def upload_image():
                 return f'Predicted Class: {class_name}'
             except Exception as e:
                 return f"An error occurred: {str(e)}"
-    return '''
-    <!doctype html>
-    <title>Upload an Image</title>
-    <h1>Upload a Road Sign Image</h1>
-    <form method="post" enctype="multipart/form-data">
-      <input type="file" name="file">
-      <input type="submit" value="Upload">
-    </form>
-    '''
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
